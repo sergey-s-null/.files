@@ -41,9 +41,11 @@ for i = 1, NUM_WPM do
     hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
 end
 
--- Move & Resize with mouse
+-- Move & Resize
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
+hl.bind("F24", hl.dsp.window.drag())
+hl.bind("F23", hl.dsp.window.resize())
 
 -- Zoom
 local function zoomfunction(value)
