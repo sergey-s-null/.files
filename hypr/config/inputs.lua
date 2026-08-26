@@ -1,4 +1,5 @@
 -- Input configuration
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#input
 
 -- Command to list available options: "localectl list-x11-keymap-options"
 hl.config({
