@@ -28,6 +28,7 @@ clipboard_image_action_command = "satty -f -"
 launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_show_advanced = true
+external_ip_enabled = true
 
     [shell.greeter_sync]
     # idk what is this
