@@ -4,8 +4,7 @@ hl.config({
     input = {
         kb_layout = "us,ru",
         kb_variant = ",",
-        kb_options = "grp:alt_shift_toggle",
-        -- sensitivity = -0.25,
+        kb_options = "grp:win_space_toggle",
         accel_profile = "flat",
     },
     -- Uncomment the section below to enable software cursors; this can help with cursor display or behavior issues
