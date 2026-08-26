@@ -1,5 +1,6 @@
 -- Input configuration
 
+-- Command to list available options: "localectl list-x11-keymap-options"
 hl.config({
     input = {
         kb_layout = "us,ru",
