@@ -30,7 +30,8 @@ polkit_agent = true
 settings_show_advanced = true
 
     [shell.greeter_sync]
-    auto_sync = true
+    # idk what is this
+    auto_sync = false
 
     [shell.panel]
     open_near_click_control_center = true
