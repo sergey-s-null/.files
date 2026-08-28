@@ -19,9 +19,10 @@ radius_bottom_left = 12
 radius_bottom_right = 12
 radius_top_left = 0
 radius_top_right = 0
-scale = 1.10
+scale = 1.00
 start = ["launcher", "clock", "spacer_1", "group:g1"]
 thickness = 35
+widget_spacing = 16
 
 [[bar.default.capsule_group]]
 border = ""
@@ -30,6 +31,14 @@ id = "g1"
 members = ["temp", "sysmon_2", "sysmon_3"]
 opacity = 1.0
 padding = 6.0
+
+[control_center]
+sidebar_section = "full"
+
+[osd]
+background_opacity = 1
+offset_y = 250
+position = "bottom_center"
 
 [shell]
 clipboard_image_action_command = "satty -f -"
@@ -87,6 +96,9 @@ countdown_seconds = 3.0
 enabled = true
 shortcut = "5"
 variant = "destructive"
+
+[shell.mpris]
+blacklist = ["vivaldi"]
 
 [system.monitor]
 gpu_poll_seconds = 2
@@ -153,9 +165,13 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
+pill_scale = 1.00
 active_pill_size = 2.5
+inactive_pill_size = 1.0
 capsule = true
 capsule_fill = "on_primary"
-inactive_pill_size = 1.0
-pill_scale = 0.80
-show_labels = false
+hide_when_empty = true
+show_labels = true
+label_source = "name"
+max_label_chars = 20
+anchor = true
