@@ -3,7 +3,12 @@ ui_scale = 1.00
 
 [bar.default]
 start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
-center = ["workspaces", "spacer_1", "active_window"]
+center = [
+    # "workspaces",
+    "taskbar",
+    "spacer_1",
+    "active_window",
+]
 end = [
     "media",
     "spacer_1",
@@ -189,7 +194,13 @@ hide_when_empty = true
 show_labels = true
 label_source = "name"
 max_label_chars = 20
+
+[widget.taskbar]
 anchor = true
+group_by_workspace = true
+active_opacity = 1.0
+inactive_opacity = 0.55
+hide_empty_workspaces = true
 
 [widget.lock_keys]
 display = "full"
