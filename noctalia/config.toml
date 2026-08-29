@@ -133,6 +133,12 @@ builtin_ids = [
     "hyprland",
 ]
 
+[wallpaper]
+directory = "~/syncthing-folders/Main/Me/Картиночеки"
+
+[wallpaper.default]
+path = "/home/sergey/syncthing-folders/Main/Me/Картиночеки/Fandoms/Games/Dark Souls 3/2560x1440-px-bridge-castle-cathedral-Dark-Souls-III-Moon-1292921-wallhere.com.jpg"
+
 [widget.clock]
 format = "{:%T %F d:%u w:%V}"
 
