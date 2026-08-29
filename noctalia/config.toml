@@ -5,6 +5,7 @@ ui_scale = 1.00
 start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
 center = [
     # "workspaces",
+    "audio_visualizer",
     "taskbar",
     "spacer_1",
     "active_window",
@@ -184,6 +185,11 @@ capsule_fill = "on_secondary"
 
 [widget.volume]
 
+[widget.audio_visualizer]
+bands = 128
+width = 128
+mirrored = false
+
 [widget.workspaces]
 pill_scale = 1.00
 active_pill_size = 2.5
@@ -201,6 +207,9 @@ group_by_workspace = true
 active_opacity = 1.0
 inactive_opacity = 0.55
 hide_empty_workspaces = true
+
+[widget.active_window]
+title_scroll = "on_hover"
 
 [widget.lock_keys]
 display = "full"
