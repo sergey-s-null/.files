@@ -2,14 +2,7 @@
 ui_scale = 1.00
 
 [bar.default]
-start = [
-    "launcher",
-    "clock",
-    "spacer_1",
-    "group:g1",
-    "keyboard_layout",
-    "lock_keys",
-]
+start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
 center = ["workspaces", "spacer_1", "active_window"]
 end = [
     "media",
@@ -38,6 +31,14 @@ id = "g1"
 border = ""
 fill = "on_secondary"
 members = ["temp", "sysmon_2", "sysmon_3"]
+opacity = 1.0
+padding = 6.0
+
+[[bar.default.capsule_group]]
+id = "g2"
+border = ""
+fill = "on_secondary"
+members = ["keyboard_layout", "lock_keys"]
 opacity = 1.0
 padding = 6.0
 
