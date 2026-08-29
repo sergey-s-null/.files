@@ -189,4 +189,4 @@ anchor = true
 display = "full"
 hide_when_off = true
 show_scroll_lock = true
-interactive = false
+interactive = true
