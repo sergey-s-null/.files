@@ -1,6 +1,9 @@
 [accessibility]
 ui_scale = 1.00
 
+[plugins]
+enabled = ["k4n4t4/hypr-submap"]
+
 [bar.default]
 start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
 center = [
@@ -44,7 +47,7 @@ padding = 6.0
 id = "g2"
 border = ""
 fill = "on_secondary"
-members = ["keyboard_layout", "lock_keys"]
+members = ["keyboard_layout", "lock_keys", "hypr-submap"]
 opacity = 1.0
 padding = 6.0
 
@@ -210,6 +213,11 @@ hide_empty_workspaces = true
 
 [widget.active_window]
 title_scroll = "on_hover"
+
+[widget.hypr-submap]
+type = "k4n4t4/hypr-submap:hypr-submap"
+hide_when_default = true
+color = "primary"
 
 [widget.lock_keys]
 display = "full"
