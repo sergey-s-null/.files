@@ -28,7 +28,6 @@ hl.bind("SUPER + SHIFT + Left",                 hl.dsp.window.move({ direction =
 hl.bind("SUPER + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
 hl.bind("SUPER + SHIFT + 1",                    hl.dsp.window.move({ monitor = MONITOR1 }))
 hl.bind("SUPER + SHIFT + 2",                    hl.dsp.window.move({ monitor = MONITOR2 }))
-hl.bind("SUPER + SHIFT + 3",                    hl.dsp.window.move({ monitor = MONITOR3 }))
 hl.bind("SUPER + SHIFT + mouse_up",             hl.dsp.window.move({ monitor   = "-1" }))
 hl.bind("SUPER + SHIFT + mouse_down",           hl.dsp.window.move({ monitor   = "+1" }))
 hl.bind("SUPER + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "m+1" }))
@@ -125,7 +124,6 @@ hl.bind("SUPER + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center no
 -- Focus on monitors
 hl.bind("SUPER + 1", hl.dsp.focus({ monitor = MONITOR1 }))
 hl.bind("SUPER + 2", hl.dsp.focus({ monitor = MONITOR2 }))
-hl.bind("SUPER + 3", hl.dsp.focus({ monitor = MONITOR3 }))
 
 -- Focus on workspace number
 for i = 1, 10 do
