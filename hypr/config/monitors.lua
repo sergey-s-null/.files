@@ -65,6 +65,7 @@ hl.define_submap(monitorsSubmap, function()
         end)
     end
 
+    hl.bind("catchall", function() end)
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
