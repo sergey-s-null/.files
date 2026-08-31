@@ -35,7 +35,7 @@ hl.bind("SUPER + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace =
 hl.bind("SUPER + CONTROL + SHIFT + Left",       hl.dsp.window.move({ workspace = "m-1" }))
 hl.bind("SUPER + CONTROL + SHIFT + mouse_up",   hl.dsp.window.move({ workspace = "m-1" }))
 hl.bind("SUPER + CONTROL + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m+1" }))
-for i = 1, NUM_WPM do
+for i = 1, 10 do
     local key = i % 10
     hl.bind("SUPER + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
 end
@@ -128,15 +128,10 @@ hl.bind("SUPER + 2", hl.dsp.focus({ monitor = MONITOR2 }))
 hl.bind("SUPER + 3", hl.dsp.focus({ monitor = MONITOR3 }))
 
 -- Focus on workspace number
--- Absolute
-for i = 1, NUM_WPM do
+for i = 1, 10 do
     local key = i % 10
-    hl.bind("SUPER + ALT + " .. key, hl.dsp.focus({ workspace = i }))
-end
--- Relative
-for i = 1, NUM_WPM do
-    local key = i % 10
-    hl.bind("SUPER + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
+    hl.bind("SUPER + ALT + "..key, hl.dsp.focus({ workspace = i }))
+    hl.bind("SUPER + CONTROL + "..key, hl.dsp.focus({ workspace = "m~"..i }))
 end
 
 -- Move to adjacent workspaces and next empty on a given monitor
