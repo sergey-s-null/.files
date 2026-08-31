@@ -69,19 +69,18 @@ hl.bind("SUPER + code:86", function() zoomfunction(0.3) end, { repeating = true 
 ---- LAUNCHER ----
 ------------------
 
-hl.bind("SUPER + Return",     hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
-hl.bind("SUPER + E",          hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
-hl.bind("SUPER + T",          hl.dsp.exec_cmd(launchPrefix .. EDITOR))
-hl.bind("SUPER + C",          hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
+hl.bind("SUPER + Return",           hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
+hl.bind("SUPER + E",                hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
+hl.bind("SUPER + T",                hl.dsp.exec_cmd(launchPrefix .. EDITOR))
+hl.bind("SUPER + C",                hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
 hl.bind("XF86Calculator",           hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
-hl.bind("SUPER + W",          hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind("SUPER + W",                hl.dsp.exec_cmd(launchPrefix .. BROWSER))
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
-hl.bind("SUPER + Z",          hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
-hl.bind("SUPER + X",          hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center"))
-hl.bind("SUPER + O",          hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
-hl.bind("SUPER + period",     hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
-hl.bind("SUPER + L",          hl.dsp.exec_cmd(noctCall .. "session lock"))
-hl.bind("SUPER + ALT + C",    hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
+hl.bind("SUPER + Z",                hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
+hl.bind("SUPER + O",                hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
+hl.bind("SUPER + period",           hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
+hl.bind("SUPER + L",                hl.dsp.exec_cmd(noctCall .. "session lock"))
+hl.bind("SUPER + ALT + C",          hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
 
 ---------------------------
 ---- HARDWARE CONTROLS ----
