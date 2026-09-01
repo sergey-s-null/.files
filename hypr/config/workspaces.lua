@@ -4,14 +4,14 @@
 local monitors = require("config.monitors").monitors
 
 hl.workspace_rule({
+    workspace = "name:gg",
+    monitor = monitors[1].name,
+})
+hl.workspace_rule({
     workspace = "1",
     monitor = monitors[1].name,
     default = true,
     persistent = true,
-})
-hl.workspace_rule({
-    workspace = "name:gaming",
-    monitor = monitors[1].name,
 })
 hl.workspace_rule({
     workspace = "99",
