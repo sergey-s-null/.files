@@ -52,8 +52,8 @@ local function zoomfunction(value)
         hl.config({ cursor = { zoom_factor = zoomvalue + value } })
     end
 end
-hl.bind("SUPER + Minus", function() zoomfunction(-0.3) end, { repeating = true})
-hl.bind("SUPER + Equal", function() zoomfunction(0.3) end, { repeating = true })
+hl.bind("SUPER + Minus", function() zoomfunction(-0.5) end, { repeating = true})
+hl.bind("SUPER + Equal", function() zoomfunction(0.5) end, { repeating = true })
 
 ------------------
 ---- LAUNCHER ----
