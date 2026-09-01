@@ -19,6 +19,9 @@ hl.bind("SUPER + Page_Down",         hl.dsp.focus({ monitor = monitors[2].name }
 hl.bind("SUPER + SHIFT + Page_Up",   hl.dsp.window.move({ monitor = monitors[1].name }))
 hl.bind("SUPER + SHIFT + Page_Down", hl.dsp.window.move({ monitor = monitors[2].name }))
 
+hl.bind("SUPER + SHIFT + bracketleft",  hl.dsp.workspace.move({ monitor = monitors[1].name }))
+hl.bind("SUPER + SHIFT + bracketright", hl.dsp.workspace.move({ monitor = monitors[2].name }))
+
 for id = 1, 10 do
     local key = id % 10
 
