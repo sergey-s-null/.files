@@ -63,7 +63,6 @@ hl.bind("SUPER + Equal", function() zoomfunction(0.3) end, { repeating = true })
 hl.bind("SUPER + code:82", function() zoomfunction(-0.3) end, { repeating = true })
 hl.bind("SUPER + code:86", function() zoomfunction(0.3) end, { repeating = true })
 
-
 ------------------
 ---- LAUNCHER ----
 ------------------
