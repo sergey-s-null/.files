@@ -1,5 +1,3 @@
-local monitors = require("config.monitors").monitors
-
 local noctCall = "noctalia msg "
 local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
 
@@ -18,22 +16,6 @@ hl.bind("SUPER + J",           hl.dsp.layout("togglesplit"))
 -- Change focus
 hl.bind("ALT + Tab",           hl.dsp.window.cycle_next())
 hl.bind("SUPER + Tab",         hl.dsp.exec_cmd(noctCall .. "window-switcher"))
-
--- Move active window around workspaces & monitors
-hl.bind("SUPER + SHIFT + Up",                   hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + SHIFT + Right",                hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + SHIFT + Left",                 hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
-hl.bind("SUPER + SHIFT + 1",                    hl.dsp.window.move({ monitor = monitors[1].name }))
-hl.bind("SUPER + SHIFT + 2",                    hl.dsp.window.move({ monitor = monitors[2].name }))
-hl.bind("SUPER + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "m+1" }))
-hl.bind("SUPER + CONTROL + SHIFT + Left",       hl.dsp.window.move({ workspace = "m-1" }))
-hl.bind("SUPER + CONTROL + SHIFT + mouse_up",   hl.dsp.window.move({ workspace = "m-1" }))
-hl.bind("SUPER + CONTROL + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m+1" }))
-for i = 1, 10 do
-    local key = i % 10
-    hl.bind("SUPER + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
-end
 
 -- Move & Resize
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
