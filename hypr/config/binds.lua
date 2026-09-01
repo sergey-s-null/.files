@@ -17,7 +17,7 @@ hl.bind("SUPER + J",           hl.dsp.layout("togglesplit"))
 
 -- Change focus
 hl.bind("ALT + Tab",           hl.dsp.window.cycle_next())
-hl.bind("SUPER + Tab",   hl.dsp.exec_cmd(noctCall .. "window-switcher"))
+hl.bind("SUPER + Tab",         hl.dsp.exec_cmd(noctCall .. "window-switcher"))
 
 -- Move active window around workspaces & monitors
 hl.bind("SUPER + SHIFT + Up",                   hl.dsp.window.move({ direction = "u" }))
