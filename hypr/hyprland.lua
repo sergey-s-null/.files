@@ -13,6 +13,7 @@ require("config.monitors").configure()
 require("config.windowrules")
 require("config.workspaces")
 require("config.screenshotting")
+require("config.navigation")
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

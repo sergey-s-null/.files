@@ -16,10 +16,6 @@ hl.bind("SUPER + F",           hl.dsp.window.fullscreen())
 hl.bind("SUPER + J",           hl.dsp.layout("togglesplit"))
 
 -- Change focus
-hl.bind("SUPER + Left",  hl.dsp.focus({ direction = "left" }))
-hl.bind("SUPER + Right", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + Up",    hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + Down",  hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + Tab",           hl.dsp.window.cycle_next())
 hl.bind("SUPER + Tab",   hl.dsp.exec_cmd(noctCall .. "window-switcher"))
 
@@ -119,22 +115,6 @@ hl.bind("SUPER + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center no
 -------------------------------
 ---- WORKSPACES & MONITORS ----
 -------------------------------
-
--- Focus on monitors
-hl.bind("SUPER + 1", hl.dsp.focus({ monitor = monitors[1].name }))
-hl.bind("SUPER + 2", hl.dsp.focus({ monitor = monitors[2].name }))
-
--- Focus on workspace number
-for i = 1, 10 do
-    local key = i % 10
-    hl.bind("SUPER + ALT + "..key, hl.dsp.focus({ workspace = i }))
-    hl.bind("SUPER + CONTROL + "..key, hl.dsp.focus({ workspace = "m~"..i }))
-end
-
--- Move to adjacent workspaces and next empty on a given monitor
-hl.bind("SUPER + CONTROL + Right",       hl.dsp.focus({ workspace = "m+1" }))
-hl.bind("SUPER + CONTROL + Left",        hl.dsp.focus({ workspace = "m-1" }))
-hl.bind("SUPER + CONTROL + Down",        hl.dsp.focus({ workspace = "emptym" }))
 
 -- Special workspace (scratchpad)
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
