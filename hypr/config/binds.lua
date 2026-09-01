@@ -1,3 +1,5 @@
+local monitors = require("config.monitors").monitors
+
 local noctCall = "noctalia msg "
 local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
 
@@ -26,8 +28,8 @@ hl.bind("SUPER + SHIFT + Up",                   hl.dsp.window.move({ direction =
 hl.bind("SUPER + SHIFT + Right",                hl.dsp.window.move({ direction = "r" }))
 hl.bind("SUPER + SHIFT + Left",                 hl.dsp.window.move({ direction = "l" }))
 hl.bind("SUPER + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
-hl.bind("SUPER + SHIFT + 1",                    hl.dsp.window.move({ monitor = MONITOR1 }))
-hl.bind("SUPER + SHIFT + 2",                    hl.dsp.window.move({ monitor = MONITOR2 }))
+hl.bind("SUPER + SHIFT + 1",                    hl.dsp.window.move({ monitor = monitors[1].name }))
+hl.bind("SUPER + SHIFT + 2",                    hl.dsp.window.move({ monitor = monitors[2].name }))
 hl.bind("SUPER + SHIFT + mouse_up",             hl.dsp.window.move({ monitor   = "-1" }))
 hl.bind("SUPER + SHIFT + mouse_down",           hl.dsp.window.move({ monitor   = "+1" }))
 hl.bind("SUPER + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "m+1" }))
@@ -121,8 +123,8 @@ hl.bind("SUPER + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center no
 -------------------------------
 
 -- Focus on monitors
-hl.bind("SUPER + 1", hl.dsp.focus({ monitor = MONITOR1 }))
-hl.bind("SUPER + 2", hl.dsp.focus({ monitor = MONITOR2 }))
+hl.bind("SUPER + 1", hl.dsp.focus({ monitor = monitors[1].name }))
+hl.bind("SUPER + 2", hl.dsp.focus({ monitor = monitors[2].name }))
 
 -- Focus on workspace number
 for i = 1, 10 do

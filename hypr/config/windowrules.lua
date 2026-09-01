@@ -1,5 +1,7 @@
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
+local monitors = require("config.monitors").monitors
+
 -- Generic floating position
 hl.window_rule({
     match = { float = true },
@@ -50,9 +52,9 @@ hl.window_rule({
 })
 
 -- Apps
-hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, monitor = MONITOR1, center = true, fullscreen_state = 0 })
-hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = MONITOR1 })
-hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = MONITOR2 })
+hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, monitor = monitors[1].name, center = true, fullscreen_state = 0 })
+hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = monitors[1].name })
+hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = monitors[2].name })
 hl.window_rule({ match = { class = "^(.*[Cc]alc.*)$" }, float = true, size = { "max(monitor_w, monitor_h)*0.17", "min(monitor_w, monitor_h)*0.43" } })
 hl.window_rule({ match = { class = "^(org\\.kde\\.keditfiletype)$" }, float = true })
 hl.window_rule({ match = { class = "^(org\\.kde\\.ark)$" }, size = { "max(monitor_w, monitor_h)*0.40", "min(monitor_w, monitor_h)*0.40" } })
