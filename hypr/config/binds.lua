@@ -30,8 +30,6 @@ hl.bind("SUPER + SHIFT + Left",                 hl.dsp.window.move({ direction =
 hl.bind("SUPER + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
 hl.bind("SUPER + SHIFT + 1",                    hl.dsp.window.move({ monitor = monitors[1].name }))
 hl.bind("SUPER + SHIFT + 2",                    hl.dsp.window.move({ monitor = monitors[2].name }))
-hl.bind("SUPER + SHIFT + mouse_up",             hl.dsp.window.move({ monitor   = "-1" }))
-hl.bind("SUPER + SHIFT + mouse_down",           hl.dsp.window.move({ monitor   = "+1" }))
 hl.bind("SUPER + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "m+1" }))
 hl.bind("SUPER + CONTROL + SHIFT + Left",       hl.dsp.window.move({ workspace = "m-1" }))
 hl.bind("SUPER + CONTROL + SHIFT + mouse_up",   hl.dsp.window.move({ workspace = "m-1" }))
@@ -137,12 +135,6 @@ end
 hl.bind("SUPER + CONTROL + Right",       hl.dsp.focus({ workspace = "m+1" }))
 hl.bind("SUPER + CONTROL + Left",        hl.dsp.focus({ workspace = "m-1" }))
 hl.bind("SUPER + CONTROL + Down",        hl.dsp.focus({ workspace = "emptym" }))
-
--- Scroll through existing workspaces & monitors
-hl.bind("SUPER + mouse_down",           hl.dsp.focus({ workspace = "m-1" }))
-hl.bind("SUPER + mouse_up",             hl.dsp.focus({ workspace = "m+1" }))
-hl.bind("SUPER + CONTROL + mouse_up",   hl.dsp.focus({ workspace = "m-1" }))
-hl.bind("SUPER + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
 
 -- Special workspace (scratchpad)
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
