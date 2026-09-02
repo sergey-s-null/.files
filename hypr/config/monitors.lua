@@ -26,7 +26,7 @@ local monitor1 = {
 
 local monitor2 = {
     name = "HDMI-A-1",
-    __disabled = false,
+    __disabled = true,
 
     init = function(self)
         hl.monitor({
