@@ -74,11 +74,3 @@ hl.bind("SUPER + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
 
 -- Notifications
 hl.bind("SUPER + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center notifications"))
-
--------------------------------
----- WORKSPACES & MONITORS ----
--------------------------------
-
--- Special workspace (scratchpad)
-hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
-hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special())
