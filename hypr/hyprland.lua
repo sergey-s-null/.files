@@ -1,5 +1,6 @@
 -- CachyOS Hyprland Configuration
 
+require("config.zoom")
 require("config.animations")
 require("config.autostart")
 require("config.colors")

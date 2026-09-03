@@ -22,20 +22,6 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 hl.bind("F24", hl.dsp.window.drag())
 hl.bind("F23", hl.dsp.window.resize())
 
--- Zoom
-local function zoomfunction(value)
-    local zoomvalue = hl.get_config("cursor:zoom_factor")
-    if (zoomvalue + value) > 3.0 then
-        hl.config({ cursor = { zoom_factor = 3.0 } })
-    elseif (zoomvalue + value) < 1.0 then
-        hl.config({ cursor = { zoom_factor = 1.0 } })
-    else
-        hl.config({ cursor = { zoom_factor = zoomvalue + value } })
-    end
-end
-hl.bind("SUPER + Minus", function() zoomfunction(-0.5) end, { repeating = true})
-hl.bind("SUPER + Equal", function() zoomfunction(0.5) end, { repeating = true })
-
 ------------------
 ---- LAUNCHER ----
 ------------------
