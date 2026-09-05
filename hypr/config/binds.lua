@@ -34,7 +34,7 @@ hl.bind("XF86Calculator",           hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
 hl.bind("SUPER + Z",                hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
 hl.bind("SUPER + O",                hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
-hl.bind("SUPER + period",           hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
+hl.bind("SUPER + Semicolon",        hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
 hl.bind("SUPER + L",                hl.dsp.exec_cmd(noctCall .. "session lock"))
 hl.bind("SUPER + ALT + C",          hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
 
