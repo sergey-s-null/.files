@@ -9,6 +9,11 @@ hl.window_rule({
     persistent_size = true
 })
 
+hl.window_rule({
+    match = { pin = true },
+    rounding = 0,
+})
+
 -- Picture-in-Picture
 hl.window_rule({
     match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
