@@ -31,7 +31,6 @@ hl.bind("SUPER + E",                hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER
 hl.bind("SUPER + T",                hl.dsp.exec_cmd(launchPrefix .. EDITOR))
 hl.bind("SUPER + C",                hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
 hl.bind("XF86Calculator",           hl.dsp.exec_cmd(launchPrefix .. CALCULATOR))
-hl.bind("SUPER + W",                hl.dsp.exec_cmd(launchPrefix .. BROWSER))
 hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
 hl.bind("SUPER + Z",                hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
 hl.bind("SUPER + O",                hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
