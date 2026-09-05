@@ -2,7 +2,7 @@
 ui_scale = 1.00
 
 [plugins]
-enabled = ["k4n4t4/hypr-submap"]
+enabled = ["k4n4t4/hypr-submap", "jamesfeeder/special-workspaces"]
 
 [brightness]
 enable_ddcutil = true
@@ -107,6 +107,7 @@ start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
 center = [
     # "workspaces",
     "audio_visualizer",
+    "special_workspaces",
     "taskbar",
     "spacer_1",
     "active_window",
@@ -204,6 +205,14 @@ max_label_chars = 20
 bands = 128
 width = 128
 mirrored = false
+
+[widget.special_workspaces]
+type = "jamesfeeder/special-workspaces:special-workspaces"
+font_size = 0
+active_style = "ghost"
+inactive_style = "ghost"
+capsule = true
+capsule_fill = "on_secondary"
 
 [widget.taskbar]
 anchor = true
