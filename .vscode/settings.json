@@ -43,4 +43,7 @@
         "user-dirs.dirs": true,
         "user-dirs.locale": true,
     },
+    "Lua.workspace.library": [
+        "/usr/share/hypr/stubs/hl.meta.lua"
+    ],
 }
