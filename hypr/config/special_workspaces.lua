@@ -9,6 +9,6 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "special:calc",
-    on_created_empty = "kitty sh -c ipython",
+    on_created_empty = "kitty -e ipython",
     gaps_out = 40,
 })
