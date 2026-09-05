@@ -6,12 +6,13 @@ local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empt
 ---------------------------
 
 -- Window manipulation
-hl.bind("SUPER + Escape",      hl.dsp.exec_cmd("hyprctl kill"))
-hl.bind("SUPER + Q",           hl.dsp.window.close())
-hl.bind("SUPER + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("SUPER + D",           hl.dsp.window.fullscreen({ mode = 1 }))
-hl.bind("SUPER + F",           hl.dsp.window.fullscreen())
-hl.bind("SUPER + J",           hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + Escape",          hl.dsp.exec_cmd("hyprctl kill"))
+hl.bind("SUPER + Q",               hl.dsp.window.close())
+hl.bind("SUPER + ALT + Space",     hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + CONTROL + Space", hl.dsp.window.pin({ action = "toggle" }))
+hl.bind("SUPER + D",               hl.dsp.window.fullscreen({ mode = 1 }))
+hl.bind("SUPER + F",               hl.dsp.window.fullscreen())
+hl.bind("SUPER + J",               hl.dsp.layout("togglesplit"))
 
 -- Change focus
 hl.bind("SUPER + Tab",         hl.dsp.exec_cmd(noctCall .. "window-switcher"))
