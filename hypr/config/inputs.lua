@@ -6,7 +6,7 @@ hl.config({
     input = {
         kb_layout = "us,ru",
         kb_variant = ",",
-        kb_options = "grp:win_space_toggle",
+        -- kb_options = "grp:win_space_toggle",
         accel_profile = "flat",
     },
     -- Uncomment the section below to enable software cursors; this can help with cursor display or behavior issues
@@ -14,6 +14,8 @@ hl.config({
     --     no_hardware_cursors = 1,
     -- },
 })
+
+hl.bind("SUPER + Space", hl.dsp.exec_cmd("hyprctl switchxkblayout main next"))
 
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
 hl.gesture({ fingers = 3, direction = "down",       action = "close" })
