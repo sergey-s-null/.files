@@ -24,10 +24,10 @@ hl.bind("F23", hl.dsp.window.resize())
 ---- LAUNCHER ----
 ------------------
 
-hl.bind("SUPER + Return",           hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
-hl.bind("SUPER + E",                hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
-hl.bind("SUPER + T",                hl.dsp.exec_cmd(launchPrefix .. EDITOR))
-hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. " -e btop"))
+hl.bind("SUPER + Return",           hl.dsp.exec_cmd(launchPrefix .. "kitty"))
+hl.bind("SUPER + E",                hl.dsp.exec_cmd(launchPrefix .. "dolphin"))
+hl.bind("SUPER + T",                hl.dsp.exec_cmd(launchPrefix .. "gnome-text-editor --new-window"))
+hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. "kitty -e btop"))
 hl.bind("SUPER + Z",                hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
 hl.bind("SUPER + O",                hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
 hl.bind("SUPER + Semicolon",        hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
