@@ -1,5 +1,7 @@
 local monitors = require("config.monitors").monitors
 
+hl.bind("ALT + Tab", hl.dsp.exec_cmd("noctalia msg window-switcher"))
+
 hl.bind("SUPER + Left",          hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + Right",         hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + Up",            hl.dsp.focus({ direction = "up" }))

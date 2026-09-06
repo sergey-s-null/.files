@@ -14,9 +14,6 @@ hl.bind("SUPER + D",               hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind("SUPER + F",               hl.dsp.window.fullscreen())
 hl.bind("SUPER + J",               hl.dsp.layout("togglesplit"))
 
--- Change focus
-hl.bind("SUPER + Tab",         hl.dsp.exec_cmd(noctCall .. "window-switcher"))
-
 -- Move & Resize
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
