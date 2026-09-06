@@ -1,0 +1,7 @@
+directory: ~/syncthing-folders/music
+library: ~/syncthing-folders/music/.meta/library.db
+import:
+    move: yes
+paths:
+    singleton: Non-Album/$artist/$title
+    default: $albumartist/$album%aunique{}/$track $title
