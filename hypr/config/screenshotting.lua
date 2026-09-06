@@ -1,3 +1,4 @@
+local common = require("common")
 
 local maxSizeCoef = 0.5
 local maxWidth = "(monitor_w * "..maxSizeCoef..")"
@@ -34,12 +35,12 @@ hl.window_rule({
 })
 
 hl.bind(
-    "Print", 
-    hl.dsp.exec_cmd("noctalia msg screenshot-region")
+    "Print",
+    common.dsp.sendNoctaliaMessage("screenshot-region")
 )
 hl.bind(
-    "SUPER + Print", 
-    hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen")
+    "SUPER + Print",
+    common.dsp.sendNoctaliaMessage("screenshot-fullscreen")
 )
 hl.bind(
     "CTRL + SHIFT + Print",
