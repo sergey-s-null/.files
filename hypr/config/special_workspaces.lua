@@ -7,7 +7,7 @@ hl.bind("SUPER + K", hl.dsp.workspace.toggle_special("knowledge"))
 
 hl.workspace_rule({
     workspace = "special:browser",
-    on_created_empty = "vivaldi",
+    on_created_empty = common.dspstr.launch("vivaldi"),
     gaps_out = 40,
 })
 
