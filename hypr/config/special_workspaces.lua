@@ -3,6 +3,7 @@ local common = require("common")
 hl.bind("SUPER + B", hl.dsp.workspace.toggle_special("browser"))
 hl.bind("SUPER + C", hl.dsp.workspace.toggle_special("calc"))
 hl.bind("SUPER + U", hl.dsp.workspace.toggle_special("music"))
+hl.bind("SUPER + K", hl.dsp.workspace.toggle_special("knowledge"))
 
 hl.workspace_rule({
     workspace = "special:browser",
@@ -19,5 +20,11 @@ hl.workspace_rule({
 hl.workspace_rule({
     workspace = "special:music",
     on_created_empty = common.dspstr.launch("kitty -e rmpc"),
+    gaps_out = 40,
+})
+
+hl.workspace_rule({
+    workspace = "special:knowledge",
+    on_created_empty = common.dspstr.launch("obsidian vault=\"Main Storage\""),
     gaps_out = 40,
 })
