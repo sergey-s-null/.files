@@ -5,7 +5,7 @@ local monitor1 = {
     name = "DP-1",
     __disabled = false,
 
-    init = function(self)
+    configure = function(self)
         hl.monitor({
             output = self.name,
             mode = "2560x1440@180Hz",
@@ -17,10 +17,7 @@ local monitor1 = {
 
     toggle = function(self)
         self.__disabled = not self.__disabled
-        hl.monitor({
-            output = self.name,
-            disabled = self.__disabled,
-        })
+        self:configure()
     end,
 }
 
@@ -28,7 +25,7 @@ local monitor2 = {
     name = "HDMI-A-1",
     __disabled = true,
 
-    init = function(self)
+    configure = function(self)
         hl.monitor({
             output = self.name,
             mode = "1920x1080@75Hz",
@@ -40,10 +37,7 @@ local monitor2 = {
 
     toggle = function(self)
         self.__disabled = not self.__disabled
-        hl.monitor({
-            output = self.name,
-            disabled = self.__disabled,
-        })
+        self:configure()
     end,
 }
 
@@ -54,7 +48,7 @@ local monitors = {
 
 local function configureMonitors()
     for i=1,#monitors do
-        monitors[i]:init()
+        monitors[i]:configure()
     end
 end
 
