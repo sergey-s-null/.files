@@ -94,6 +94,7 @@ builtin_ids = [
     "alacritty",
     "hyprland",
 ]
+community_ids = ["yazi"]
 
 [wallpaper]
 directory = "~/syncthing-folders/Main/Me/Картиночеки"
