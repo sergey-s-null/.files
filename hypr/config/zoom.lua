@@ -1,3 +1,11 @@
+hl.config({
+    cursor = {
+        zoom_disable_aa = true,
+        -- zoom_detached_camera = false,
+        -- zoom_rigid = true,
+    }
+})
+
 local MIN_ZOOM = 1.0
 local MAX_ZOOM = 5.0
 
@@ -12,4 +20,4 @@ local function changeZoom(multiplier)
 end
 
 hl.bind("SUPER + Equal", function() changeZoom(1.5) end, { repeating = true })
-hl.bind("SUPER + Minus", function() changeZoom(1.0 / 1.5) end, { repeating = true})
+hl.bind("SUPER + Minus", function() changeZoom(1.0 / 1.5) end, { repeating = true })
