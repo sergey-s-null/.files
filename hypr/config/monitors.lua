@@ -59,7 +59,7 @@ local function configureBinds()
 
     hl.define_submap(monitorsSubmap, function()
         for i=1,#monitors do
-            hl.bind(i, function()
+            hl.bind(tostring(i), function()
                 monitors[i]:toggle()
             end)
         end
