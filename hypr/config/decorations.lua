@@ -32,7 +32,7 @@ hl.config({
         },
     },
     decoration = {
-        dim_special = 0.3,
+        dim_special = 0.7,
         rounding = 10,
         active_opacity = 0.95,
         inactive_opacity = 0.85,
