@@ -39,25 +39,34 @@ hl.window_rule({
     },
 })
 
-hl.bind(
-    keys.PRINT,
-    common.dsp.sendNoctaliaMessage("screenshot-region")
-)
+local screenshotsDirectory = "$HOME/Pictures/scr/$(date +%Y)/$(date +%m)/"
+local fileNameFormat = "%d_%H-%M-%S_%3N.png"
+
 hl.bind(
     "SUPER + " .. keys.PRINT,
-    common.dsp.sendNoctaliaMessage("screenshot-fullscreen")
-)
-hl.bind(
-    "CTRL + SHIFT + " .. keys.PRINT,
     hl.dsp.exec_cmd(
-        "grim"
-        .. " -g \"$(slurp)\""
-        .. " -"
-        .. " |"
-        .. " feh -"
-        .. " --class feh-pinned-screenshot"
-        .. " --scale-down"
-        .. " --auto-zoom"
-        .. " --no-menus"
+        "geometry=$(slurp)"
+        .. " && scrdir=" .. screenshotsDirectory
+        .. " && mkdir -p $scrdir"
+        .. " && grim -g \"$geometry\" - | tee $scrdir/$(date +" .. fileNameFormat .. ") | wl-copy"
     )
 )
+
+hl.bind(
+    "SUPER + SHIFT + " .. keys.PRINT,
+    hl.dsp.exec_cmd(
+        "geometry=$(slurp)"
+        .. " && scrdir=" .. screenshotsDirectory
+        .. " && filepath=$scrdir/$(date +" .. fileNameFormat .. ")"
+        .. " && mkdir -p $scrdir"
+        .. " && grim -g \"$geometry\" - | satty --filename - --output-filename $filepath"
+        .. " && [ -f $filepath ] && wl-copy < \"$filepath\""
+    )
+)
+
+local pinScreenshotDispatcher = hl.dsp.exec_cmd(
+    "geometry=$(slurp)"
+    .. " && grim -g \"$geometry\" - | feh - --class feh-pinned-screenshot --scale-down --auto-zoom --no-menus"
+)
+hl.bind("CTRL + SHIFT + " .. keys.PRINT, pinScreenshotDispatcher)
+hl.bind("SUPER + ALT + " .. keys.PRINT, pinScreenshotDispatcher)
