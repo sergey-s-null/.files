@@ -1,4 +1,5 @@
 local common = require("common")
+local keys = require("config.keys")
 
 local browser = "browser"
 local calculator = "calc"
@@ -8,19 +9,19 @@ local knowledge = "knowledge"
 local keys = {
     {
         name = browser,
-        key = "B",
+        key = keys.B,
     },
     {
         name = calculator,
-        key = "C",
+        key = keys.C,
     },
     {
         name = music,
-        key = "U",
+        key = keys.U,
     },
     {
         name = knowledge,
-        key = "K",
+        key = keys.K,
     },
 }
 

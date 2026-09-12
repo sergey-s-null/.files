@@ -1,8 +1,11 @@
 -- Monitor wiki https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- Example: output can be found with hyprctl monitors. Edit variables.lua for the monitor outputs instead of here directly
 
+local keys = require("config.keys")
+
 local monitor1 = {
     name = "DP-1",
+    key = keys._1,
     __disabled = false,
 
     configure = function(self)
@@ -23,7 +26,8 @@ local monitor1 = {
 
 local monitor2 = {
     name = "HDMI-A-1",
-    __disabled = true,
+    key = keys._2,
+    __disabled = false,
 
     configure = function(self)
         hl.monitor({
@@ -47,7 +51,7 @@ local monitors = {
 }
 
 local function configureMonitors()
-    for i=1,#monitors do
+    for i = 1, #monitors do
         monitors[i]:configure()
     end
 end
@@ -55,17 +59,18 @@ end
 local function configureBinds()
     local monitorsSubmap = "monitors"
 
-    hl.bind("SUPER + M", hl.dsp.submap(monitorsSubmap))
+    hl.bind("SUPER + " .. keys.M, hl.dsp.submap(monitorsSubmap))
 
     hl.define_submap(monitorsSubmap, function()
-        for i=1,#monitors do
-            hl.bind(tostring(i), function()
-                monitors[i]:toggle()
+        for i = 1, #monitors do
+            local monitor = monitors[i]
+            hl.bind(monitor.key, function()
+                monitor:toggle()
             end)
         end
 
-        hl.bind("catchall", function() end)
-        hl.bind("escape", hl.dsp.submap("reset"))
+        hl.bind(keys.CATCH_ALL, function() end)
+        hl.bind(keys.ESCAPE, hl.dsp.submap("reset"))
     end)
 end
 

@@ -1,6 +1,8 @@
 -- Input configuration
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#input
 
+local keys = require("config.keys")
+
 -- Command to list available options: "localectl list-x11-keymap-options"
 hl.config({
     input = {
@@ -15,9 +17,9 @@ hl.config({
     -- },
 })
 
-hl.bind("SUPER + Space", hl.dsp.exec_cmd("hyprctl switchxkblayout main next"))
+hl.bind("SUPER + " .. keys.SPACE, hl.dsp.exec_cmd("hyprctl switchxkblayout main next"))
 
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
-hl.gesture({ fingers = 3, direction = "down",       action = "close" })
-hl.gesture({ fingers = 3, direction = "up",         action = "fullscreen" })
-hl.gesture({ fingers = 3, direction = "left",       action = "float" })
+hl.gesture({ fingers = 3, direction = "down", action = "close" })
+hl.gesture({ fingers = 3, direction = "up", action = "fullscreen" })
+hl.gesture({ fingers = 3, direction = "left", action = "float" })

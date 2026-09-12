@@ -1,3 +1,5 @@
+local keys = require("config.keys")
+
 hl.config({
     cursor = {
         zoom_disable_aa = true,
@@ -11,7 +13,7 @@ local MAX_ZOOM = 5.0
 
 local function changeZoom(multiplier)
     local factor = hl.get_config("cursor:zoom_factor")
-    
+
     factor = factor * multiplier
     factor = math.max(MIN_ZOOM, factor)
     factor = math.min(MAX_ZOOM, factor)
@@ -19,5 +21,5 @@ local function changeZoom(multiplier)
     hl.config({ cursor = { zoom_factor = factor } })
 end
 
-hl.bind("SUPER + Equal", function() changeZoom(1.5) end, { repeating = true })
-hl.bind("SUPER + Minus", function() changeZoom(1.0 / 1.5) end, { repeating = true })
+hl.bind("SUPER + " .. keys.EQUAL, function() changeZoom(1.5) end, { repeating = true })
+hl.bind("SUPER + " .. keys.MINUS, function() changeZoom(1.0 / 1.5) end, { repeating = true })
