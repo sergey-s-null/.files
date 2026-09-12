@@ -7,8 +7,8 @@ return {
     D = "D",
     E = "E",
     F = "F",
-    -- G = "G",
-    -- H = "H",
+    -- G = "G", -- TODO: as global?
+    -- H = "H", -- TODO: as tools?
     -- I = "I",
     J = "J",
     K = "K",
