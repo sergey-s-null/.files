@@ -9,7 +9,6 @@
         "dconf": true,
         "discord": true,
         "entropy": true,
-        "fish": true,
         "gtk*": true,
         "htop": true,
         "keepassxc": true,
