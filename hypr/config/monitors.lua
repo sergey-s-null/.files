@@ -1,7 +1,12 @@
 -- Monitor wiki https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- Example: output can be found with hyprctl monitors. Edit variables.lua for the monitor outputs instead of here directly
 
+local common = require("common")
 local keys = require("config.keys")
+
+local state_directory = os.getenv("HOME") .. "/.local/state/hypr"
+local state_file_name = "monitors"
+local state_provider = common.create_state_provider(state_directory, state_file_name)
 
 local monitor1 = {
     name = "DP-1",
@@ -16,11 +21,6 @@ local monitor1 = {
             scale = 1,
             disabled = self.__disabled,
         })
-    end,
-
-    toggle = function(self)
-        self.__disabled = not self.__disabled
-        self:configure()
     end,
 }
 
@@ -38,17 +38,31 @@ local monitor2 = {
             disabled = self.__disabled,
         })
     end,
-
-    toggle = function(self)
-        self.__disabled = not self.__disabled
-        self:configure()
-    end,
 }
+
+local state = state_provider:load() or {}
+
+local function toggle(self)
+    self.__disabled = not self.__disabled
+    self:configure()
+    state[self.name]["disabled"] = self.__disabled
+    state_provider:save(state)
+end
 
 local monitors = {
     monitor1,
     monitor2,
 }
+
+for _, monitor in pairs(monitors) do
+    monitor.toggle = toggle
+    if not state[monitor.name] then
+        state[monitor.name] = {
+            ["disabled"] = false,
+        }
+    end
+    monitor.__disabled = state[monitor.name]["disabled"]
+end
 
 local function configureMonitors()
     for i = 1, #monitors do
