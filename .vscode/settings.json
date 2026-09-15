@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         // Directories
+        ".git": true,
         "alacritty": true,
         "autostart": true,
         "btop": true,
