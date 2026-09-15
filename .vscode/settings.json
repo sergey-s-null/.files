@@ -29,6 +29,12 @@
         "Throne": true,
         "vivaldi": true,
         "xsettingsd": true,
+        "thunderbird": true,
+        "sqlitebrowser": true,
+        "qalculate": true,
+        "MusicBrainz": true,
+        "GIMP": true,
+        "broot": true,
         // Files
         "baloofileinformationrc": true,
         "cachyos-hello.json": true,
@@ -40,6 +46,7 @@
         "trashrc": true,
         "user-dirs.dirs": true,
         "user-dirs.locale": true,
+        "kid3rc": true,
     },
     "Lua.workspace.library": [
         "/usr/share/hypr/stubs/hl.meta.lua"
