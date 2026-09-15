@@ -1,4 +1,3 @@
-local common = require("common")
 local keys = require("config.keys")
 
 local maxSizeCoef = 0.5
