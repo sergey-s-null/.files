@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+LOG_DIR="$HOME/.local/share/mpv/track/$(date '+%Y')"
+LOGFILE="$LOG_DIR/$(date '+%m').log"
+
+mkdir -p "$LOG_DIR"
+
+START_HUMAN=$(date '+%Y-%m-%d %H:%M:%S')
+START_SEC=$(date +%s)
+
+echo "$START_HUMAN - START: $*" >> "$LOGFILE"
+
+/usr/bin/mpv "$@"
+
+END_HUMAN=$(date '+%Y-%m-%d %H:%M:%S')
+END_SEC=$(date +%s)
+DURATION_SEC=$(( END_SEC - START_SEC ))
+
+HOURS=$(( DURATION_SEC / 3600 ))
+MINUTES=$(( (DURATION_SEC % 3600) / 60 ))
+SECONDS=$(( DURATION_SEC % 60 ))
+
+echo "$END_HUMAN - EXIT (Duration: ${HOURS}h ${MINUTES}m ${SECONDS}s)" >> "$LOGFILE"
