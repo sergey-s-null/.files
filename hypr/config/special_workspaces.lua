@@ -5,6 +5,7 @@ local browser = "browser"
 local calculator = "calc"
 local music = "music"
 local knowledge = "knowledge"
+local secrets = "secrets"
 
 local keys = {
     {
@@ -22,6 +23,10 @@ local keys = {
     {
         name = knowledge,
         key = keys.K,
+    },
+    {
+        name = secrets,
+        key = keys.P,
     },
 }
 
@@ -57,4 +62,10 @@ hl.workspace_rule({
     workspace = "special:" .. knowledge,
     on_created_empty = common.dspstr.launch("obsidian vault=\"Main Storage\""),
     gaps_out = 40,
+})
+
+hl.workspace_rule({
+    workspace = "special:" .. secrets,
+    on_created_empty = common.dspstr.launch("keepassxc"),
+    gaps_out = 80,
 })
