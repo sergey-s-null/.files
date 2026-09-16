@@ -7,7 +7,7 @@ local music = "music"
 local knowledge = "knowledge"
 local secrets = "secrets"
 
-local keys = {
+local ws_keys = {
     {
         name = browser,
         key = keys.B,
@@ -30,7 +30,7 @@ local keys = {
     },
 }
 
-for _, x in pairs(keys) do
+for _, x in pairs(ws_keys) do
     hl.bind("SUPER + " .. x.key, hl.dsp.workspace.toggle_special(x.name))
     hl.bind("SUPER + SHIFT + " .. x.key, hl.dsp.window.move({ workspace = "special:" .. x.name }))
 end
