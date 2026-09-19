@@ -1,3 +1,5 @@
+# https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/docs/format_config_EN.md
+# https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
 [*.lua]
 quote_style = double
 align_continuous_assign_statement = false
