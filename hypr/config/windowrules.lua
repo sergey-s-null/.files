@@ -29,10 +29,21 @@ local gamingApps = "^(steam_app.*|gamescope)$"
 local gamingWorkspace = "name:gaming"
 
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
-hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspace, fullscreen_state = 2, content = "game", sync_fullscreen = true })
+hl.window_rule({
+    match = { xdg_tag = "^(.*game.*)$" },
+    workspace = gamingWorkspace,
+    fullscreen_state = 2,
+    content = "game",
+    sync_fullscreen = true,
+})
 hl.window_rule({ match = { class = gamingApps }, workspace = gamingWorkspace })
 hl.window_rule({ match = { class = "^(steam)$", title = "^(Friends List)$" }, float = true })
-hl.window_rule({ match = { class = "^(steam)$", title = "^(Launching\\.{3})$" }, float = true, center = true, workspace = gamingWorkspace })
+hl.window_rule({
+    match = { class = "^(steam)$", title = "^(Launching\\.{3})$" },
+    float = true,
+    center = true,
+    workspace = gamingWorkspace
+})
 hl.window_rule({
     match = {
         class         = gamingApps,
@@ -99,14 +110,14 @@ local modalMatches = {
     { title = "^(File Upload|Choose wallpaper|Library)(.*)$" },
     { class = "^(.*dialog.*)$" },
     { title = "^(.*dialog.*)$" },
-    { class = "^(hyprland-share-picker)$"},
+    { class = "^(hyprland-share-picker)$" },
 }
 for _, m in ipairs(modalMatches) do hl.window_rule({ match = m, float = true }) end
 
 -- Ignore maximize requests from all apps. You'll probably like this.
 hl.window_rule({
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+    name           = "suppress-maximize-events",
+    match          = { class = ".*" },
     suppress_event = "maximize",
 })
 
@@ -122,4 +133,12 @@ hl.window_rule({
         pin        = false,
     },
     no_focus = true,
+})
+
+hl.window_rule({
+    match = {
+        class = "one.alynx.showmethekey",
+        title = ".*Floating Window.*",
+    },
+    float = true,
 })
