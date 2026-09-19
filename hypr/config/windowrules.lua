@@ -17,11 +17,11 @@ hl.window_rule({
 
 -- Picture-in-Picture
 hl.window_rule({
-    match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-    float             = true,
+    match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+    float = true,
     keep_aspect_ratio = true,
-    size              = { "max(monitor_w, monitor_h)*0.25", "min(monitor_w, monitor_h)*0.25" },
-    pin               = true,
+    size = { "max(monitor_w, monitor_h)*0.25", "min(monitor_w, monitor_h)*0.25" },
+    pin = true,
 })
 
 -- Gaming
@@ -46,26 +46,26 @@ hl.window_rule({
 })
 hl.window_rule({
     match = {
-        class         = gamingApps,
-        title         = "^(.+)$",
+        class = gamingApps,
+        title = "^(.+)$",
         initial_title = "negative:^(.*\\\\home\\\\.*)$",
     },
-    content          = "game",
-    decorate         = false,
+    content = "game",
+    decorate = false,
     fullscreen_state = 2,
-    size             = { "monitor_w", "monitor_h" },
-    sync_fullscreen  = true,
+    size = { "monitor_w", "monitor_h" },
+    sync_fullscreen = true,
 })
 hl.window_rule({
     match = {
-        class         = "^(steam_app.*)$",
+        class = "^(steam_app.*)$",
         initial_title = "^$",
     },
-    center           = true,
-    float            = true,
-    fullscreen       = false,
+    center = true,
+    float = true,
+    fullscreen = false,
     fullscreen_state = 0,
-    workspace        = gamingWorkspace,
+    workspace = gamingWorkspace,
 })
 
 -- Apps
@@ -80,7 +80,19 @@ hl.window_rule({ match = { class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?
 hl.window_rule({
     match = {
         class = "^(org\\.kde\\.dolphin)$",
-        title = "negative:^(Moving.*|Create New.*|Extract.*|Compress.*|Copying.*|Progress.*|Configure.*|Properties.*|Choose\\sApplication.*)$",
+        title =
+            "negative:^("
+            .. "Moving.*"
+            .. "|Create New.*"
+            .. "|Extract.*"
+            .. "|Compress.*"
+            .. "|Copying.*"
+            .. "|Progress.*"
+            .. "|Configure.*"
+            .. "|Properties.*"
+            .. "|Choose\\sApplication.*"
+            .. ")$"
+        ,
     },
     float = true,
     center = true,
@@ -116,21 +128,21 @@ for _, m in ipairs(modalMatches) do hl.window_rule({ match = m, float = true }) 
 
 -- Ignore maximize requests from all apps. You'll probably like this.
 hl.window_rule({
-    name           = "suppress-maximize-events",
-    match          = { class = ".*" },
+    name = "suppress-maximize-events",
+    match = { class = ".*" },
     suppress_event = "maximize",
 })
 
 -- Fix some dragging issues with XWayland
 hl.window_rule({
-    name  = "fix-xwayland-drags",
+    name = "fix-xwayland-drags",
     match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
+        class = "^$",
+        title = "^$",
+        xwayland = true,
+        float = true,
         fullscreen = false,
-        pin        = false,
+        pin = false,
     },
     no_focus = true,
 })
