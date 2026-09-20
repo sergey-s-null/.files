@@ -30,6 +30,7 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
+no_default_action = [{ run = "true", desc = "---" }]
 edit = [
 	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix", block = true },
 ]
@@ -37,9 +38,7 @@ play = [
 	{ run = "xdg-open %s1", desc = "Play", for = "linux", orphan = true },
 	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
 ]
-open = [
-	{ run = "xdg-open %s1", desc = "Open", for = "linux" },
-]
+open = [{ run = "xdg-open %s1", desc = "Open", for = "linux" }]
 reveal = [
 	{ run = "xdg-open %d1", desc = "Reveal", for = "linux" },
 	{ run = "clear; exiftool %s1; echo 'Press enter to exit'; read _", desc = "Show EXIF", for = "unix", block = true },
@@ -58,6 +57,7 @@ trash = [
 rules = [
 	# Folder
 	{ mime = "folder/*", use = [
+		"no_default_action",
 		"edit",
 		"open",
 		"reveal",
