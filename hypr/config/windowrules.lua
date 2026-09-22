@@ -154,3 +154,10 @@ hl.window_rule({
     },
     float = true,
 })
+
+hl.window_rule({
+    match = {
+        class = "gimp",
+    },
+    opaque = true,
+})
