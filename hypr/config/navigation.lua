@@ -40,11 +40,11 @@ local keyToWorkspaceNumber = {
 }
 
 for _, x in pairs(keyToWorkspaceNumber) do
-    hl.bind("SUPER + " .. x.key, hl.dsp.focus({ workspace = "m~" .. x.num }))
-    hl.bind("SUPER + SHIFT + " .. x.key, hl.dsp.window.move({ workspace = "m~" .. x.num }))
+    hl.bind("SUPER + " .. x.key, hl.dsp.focus({ workspace = x.num }))
+    hl.bind("SUPER + SHIFT + " .. x.key, hl.dsp.window.move({ workspace = x.num }))
 
-    hl.bind("SUPER + ALT + " .. x.key, hl.dsp.focus({ workspace = x.num }))
-    hl.bind("SUPER + SHIFT + ALT + " .. x.key, hl.dsp.window.move({ workspace = x.num }))
+    hl.bind("SUPER + ALT + " .. x.key, hl.dsp.focus({ workspace = "m~" .. x.num }))
+    hl.bind("SUPER + SHIFT + ALT + " .. x.key, hl.dsp.window.move({ workspace = "m~" .. x.num }))
 end
 
 hl.bind("SUPER + ALT + " .. keys.DOWN, hl.dsp.focus({ workspace = "emptym" }))
