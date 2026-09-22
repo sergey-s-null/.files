@@ -26,7 +26,7 @@ hl.bind("SUPER + SHIFT + " .. keys.PAGE_DOWN, hl.dsp.window.move({ monitor = mon
 hl.bind("SUPER + SHIFT + " .. keys.BRACKET_LEFT, hl.dsp.workspace.move({ monitor = monitors[1].name }))
 hl.bind("SUPER + SHIFT + " .. keys.BRACKET_RIGHT, hl.dsp.workspace.move({ monitor = monitors[2].name }))
 
-local keyToWorkspaceNumber = {
+local key_to_workspace_number = {
     { key = keys._1, num = "1" },
     { key = keys._2, num = "2" },
     { key = keys._3, num = "3" },
@@ -39,7 +39,7 @@ local keyToWorkspaceNumber = {
     { key = keys._0, num = "10" },
 }
 
-for _, x in pairs(keyToWorkspaceNumber) do
+for _, x in pairs(key_to_workspace_number) do
     hl.bind("SUPER + " .. x.key, hl.dsp.focus({ workspace = x.num }))
     hl.bind("SUPER + SHIFT + " .. x.key, hl.dsp.window.move({ workspace = x.num }))
 
