@@ -1,3 +1,5 @@
+-- https://github.com/tesseract-ocr/tesseract
+
 local function exec(lang)
     local cmd =
         "geometry=$(slurp)"
