@@ -58,18 +58,6 @@ hl.bind("XF86MonBrightnessDown", common.dsp.sendNoctaliaMessage("brightness-down
 ---- UTILITIES ----
 -------------------
 
--- Screen Capture
-local tools_submap = "tools"
-
-hl.bind("SUPER + " .. keys.H, hl.dsp.submap(tools_submap))
-
-hl.define_submap(tools_submap, "reset", function()
-    hl.bind(keys.P, hl.dsp.exec_cmd("hyprpicker -a -n"))
-
-    hl.bind(keys.CATCH_ALL, function() end)
-    hl.bind(keys.ESCAPE, hl.dsp.submap("reset"))
-end)
-
 -- Theming and Wallpaper
 hl.bind("SUPER + SHIFT + " .. keys.W, common.dsp.sendNoctaliaMessage("panel-toggle wallpaper"))
 

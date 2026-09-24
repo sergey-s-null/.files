@@ -2,6 +2,7 @@
 
 require("config.programs.mpv")
 
+require("config.tools")
 require("config.zoom")
 require("config.animations")
 require("config.autostart")
