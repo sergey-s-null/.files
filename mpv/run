@@ -9,7 +9,7 @@ START_SEC=$(date +%s)
 
 echo "$START_HUMAN - START: $*" >> "$LOGFILE"
 
-/usr/bin/mpv "$@"
+/usr/bin/mpv --wayland-app-id=mpv-tracked "$@"
 
 END_HUMAN=$(date '+%Y-%m-%d %H:%M:%S')
 END_SEC=$(date +%s)

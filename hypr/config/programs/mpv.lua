@@ -7,10 +7,11 @@ local function build_position_config(width_scale, left_rel, top_rel)
 end
 
 local default_position = build_position_config(0.3, 0.25, 0.75)
+local tracked_position = build_position_config(0.3, 0.75, 0.75)
 
 hl.window_rule({
     match = {
-        class = "mpv"
+        class = "mpv",
     },
     opaque = true,
     keep_aspect_ratio = true,
@@ -22,5 +23,22 @@ hl.window_rule({
     move = {
         default_position.left,
         default_position.top
+    },
+})
+
+hl.window_rule({
+    match = {
+        class = "mpv-tracked",
+    },
+    opaque = true,
+    keep_aspect_ratio = true,
+    float = true,
+    size = {
+        tracked_position.width,
+        tracked_position.height
+    },
+    move = {
+        tracked_position.left,
+        tracked_position.top
     },
 })
