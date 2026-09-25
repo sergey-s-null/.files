@@ -1,9 +1,12 @@
-local scale_w = 0.3
-local width = "monitor_w * "..scale_w
-local height = "window_h * ("..width..") / window_w"
+local function build_position_config(width_scale, left_rel, top_rel)
+    local width = "monitor_w * " .. width_scale
+    local height = "window_h * (" .. width .. ") / window_w"
+    local left = "monitor_w * " .. left_rel .. " - (" .. width .. ") / 2"
+    local top = "monitor_h * " .. top_rel .. " - (" .. height .. ") / 2"
+    return { width = width, height = height, left = left, top = top, }
+end
 
-local left = "monitor_w * 3 / 4 - ("..width..") / 2"
-local top = "monitor_h * 3 / 4 - ("..height..") / 2"
+local default_position = build_position_config(0.3, 0.25, 0.75)
 
 hl.window_rule({
     match = {
@@ -13,11 +16,11 @@ hl.window_rule({
     keep_aspect_ratio = true,
     float = true,
     size = {
-        width,
-        height
+        default_position.width,
+        default_position.height
     },
     move = {
-        left,
-        top
+        default_position.left,
+        default_position.top
     },
 })
