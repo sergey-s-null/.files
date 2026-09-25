@@ -64,18 +64,18 @@ for _, monitor in pairs(monitors) do
     monitor.__disabled = state[monitor.name]["disabled"]
 end
 
-local function configureMonitors()
+local function configure_monitors()
     for i = 1, #monitors do
         monitors[i]:configure()
     end
 end
 
-local function configureBinds()
-    local monitorsSubmap = "monitors"
+local function configure_binds()
+    local monitors_submap = "monitors"
 
-    hl.bind("SUPER + " .. keys.M, hl.dsp.submap(monitorsSubmap))
+    hl.bind("SUPER + " .. keys.M, hl.dsp.submap(monitors_submap))
 
-    hl.define_submap(monitorsSubmap, function()
+    hl.define_submap(monitors_submap, function()
         for i = 1, #monitors do
             local monitor = monitors[i]
             hl.bind(monitor.key, function()
@@ -89,8 +89,8 @@ local function configureBinds()
 end
 
 local function configure()
-    configureMonitors()
-    configureBinds()
+    configure_monitors()
+    configure_binds()
 end
 
 return {

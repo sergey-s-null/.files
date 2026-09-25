@@ -15,9 +15,7 @@ local function exec(lang)
 end
 
 return {
-    dsp = {
-        exec_any_lang = function() return exec() end,
-        exec_eng = function() return exec("eng") end,
-        exec_rus = function() return exec("rus") end,
-    }
+    exec_any_lang = function() return exec() end,
+    exec_eng = function() return exec("eng") end,
+    exec_rus = function() return exec("rus") end,
 }

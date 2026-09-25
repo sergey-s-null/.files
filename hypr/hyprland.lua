@@ -1,6 +1,6 @@
 -- CachyOS Hyprland Configuration
 
-require("config.programs.mpv")
+require("config.programs.configure")
 
 require("config.tools")
 require("config.zoom")
