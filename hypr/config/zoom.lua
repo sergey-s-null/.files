@@ -11,7 +11,7 @@ hl.config({
 local MIN_ZOOM = 1.0
 local MAX_ZOOM = 5.0
 
-local function changeZoom(multiplier)
+local function change_zoom(multiplier)
     local factor = hl.get_config("cursor:zoom_factor")
 
     factor = factor * multiplier
@@ -21,5 +21,5 @@ local function changeZoom(multiplier)
     hl.config({ cursor = { zoom_factor = factor } })
 end
 
-hl.bind("SUPER + " .. keys.EQUAL, function() changeZoom(1.5) end, { repeating = true })
-hl.bind("SUPER + " .. keys.MINUS, function() changeZoom(1.0 / 1.5) end, { repeating = true })
+hl.bind("SUPER + " .. keys.EQUAL, function() change_zoom(1.5) end, { repeating = true })
+hl.bind("SUPER + " .. keys.MINUS, function() change_zoom(1.0 / 1.5) end, { repeating = true })
