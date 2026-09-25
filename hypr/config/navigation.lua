@@ -1,6 +1,6 @@
 local common = require("common")
 local keys = require("config.keys")
-local monitors = require("config.monitors").monitors
+local monitors = require("config.monitors.list")
 
 hl.bind("ALT + " .. keys.TAB, common.dsp.sendNoctaliaMessage("window-switcher"))
 

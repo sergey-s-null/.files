@@ -1,7 +1,7 @@
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- To get actual values call `hyprctl clients`
 
-local monitors = require("config.monitors").monitors
+local monitors = require("config.monitors.list")
 
 -- Generic floating position
 hl.window_rule({

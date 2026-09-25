@@ -2,7 +2,7 @@
 -- Add your workspace rules here. Increment the workspace number as you go. Do not have duplicate workspaces.
 
 local common = require("common")
-local monitors = require("config.monitors").monitors
+local monitors = require("config.monitors.list")
 local keys = require("config.keys")
 
 local browser = "browser"

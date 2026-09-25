@@ -1,6 +1,3 @@
--- Monitor wiki https://wiki.hypr.land/Configuring/Basics/Monitors/
--- Example: output can be found with hyprctl monitors. Edit variables.lua for the monitor outputs instead of here directly
-
 local common = require("common")
 local keys = require("config.keys")
 
@@ -64,36 +61,4 @@ for _, monitor in pairs(monitors) do
     monitor.__disabled = state[monitor.name]["disabled"]
 end
 
-local function configure_monitors()
-    for i = 1, #monitors do
-        monitors[i]:configure()
-    end
-end
-
-local function configure_binds()
-    local monitors_submap = "monitors"
-
-    hl.bind("SUPER + " .. keys.M, hl.dsp.submap(monitors_submap))
-
-    hl.define_submap(monitors_submap, function()
-        for i = 1, #monitors do
-            local monitor = monitors[i]
-            hl.bind(monitor.key, function()
-                monitor:toggle()
-            end)
-        end
-
-        hl.bind(keys.CATCH_ALL, function() end)
-        hl.bind(keys.ESCAPE, hl.dsp.submap("reset"))
-    end)
-end
-
-local function configure()
-    configure_monitors()
-    configure_binds()
-end
-
-return {
-    configure = configure,
-    monitors = monitors,
-}
+return monitors
