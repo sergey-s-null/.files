@@ -22,6 +22,7 @@ hl.window_rule({
         class = "feh-pinned-screenshot",
     },
     opaque = true,
+    no_anim = true,
     float = true,
     pin = true,
     keep_aspect_ratio = true,
