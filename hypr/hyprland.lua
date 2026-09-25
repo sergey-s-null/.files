@@ -2,7 +2,7 @@
 
 require("config.programs.configure")
 
-require("config.tools")
+require("config.tools.configure")
 require("config.zoom")
 require("config.animations")
 require("config.autostart")
