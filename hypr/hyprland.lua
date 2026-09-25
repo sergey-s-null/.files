@@ -16,7 +16,7 @@ require("config.monitors.configure")
 require("config.special_workspaces")
 require("config.windowrules")
 require("config.workspaces")
-require("config.screenshotting")
+require("config.screenshotting.configure")
 require("config.navigation")
 
 -- For Noctalia Color templates
