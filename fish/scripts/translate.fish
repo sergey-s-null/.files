@@ -49,4 +49,4 @@ function on_winch --on-signal WINCH
 end
 
 render
-read -n 1
+read -P "..." -n 1
