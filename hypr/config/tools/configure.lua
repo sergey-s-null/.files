@@ -1,3 +1,5 @@
+require("config.tools.translation.window_rules.configure")
+
 local keys = require("config.keys")
 local ocr_dsp = require("config.tools.ocr.dispatchers")
 
@@ -7,6 +9,7 @@ local ocr_submap = tools_submap .. "/ocr"
 hl.bind("SUPER + " .. keys.H, hl.dsp.submap(tools_submap))
 
 hl.define_submap(tools_submap, "reset", function()
+    hl.bind(keys.T, hl.dsp.exec_cmd("~/.config/fish/scripts/translate_kitty.fish"))
     hl.bind(keys.P, hl.dsp.exec_cmd("hyprpicker -a -n"))
 
     hl.bind(keys.O, ocr_dsp.exec_any_lang())
