@@ -9,7 +9,7 @@ echo "Geometry is $geometry"
 
 if test -z "$geometry"
     echo "No geometry."
-    read -n 1
+    read -P "" -n 1
     exit 1
 end
 
@@ -17,24 +17,24 @@ set text (grim -g "$geometry" - | tesseract - - -l eng)
 set text_status $pipestatus
 if test $text_status[1] -ne 0
     echo "Grim failed." >&2
-    read -n 1
+    read -P "" -n 1
     exit 1
 end
 if test $text_status[2] -ne 0
     echo "Tesseract failed." >&2
-    read -n 1
+    read -P "" -n 1
     exit 1
 end
 if test -z (string trim "$text")
     echo "Text recognized by tesseract is empty. Text: \"$text\"." >&2
-    read -n 1
+    read -P "" -n 1
     exit 1
 end
 
 set translated (trans en:ru "$text" | string collect)
 if test $status -ne 0
     echo "Error on translating." >&2
-    read -n 1
+    read -P "" -n 1
     exit 1
 end
 
@@ -49,4 +49,4 @@ function on_winch --on-signal WINCH
 end
 
 render
-read -P "..." -n 1
+read -P "" -n 1
