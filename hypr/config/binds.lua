@@ -31,7 +31,6 @@ hl.bind("CONTROL + SHIFT + " .. keys.ESCAPE, common.dsp.launch("kitty -e btop"))
 hl.bind("SUPER + " .. keys.Z, common.dsp.sendNoctaliaMessage("settings-toggle"))
 hl.bind("SUPER + " .. keys.O, common.dsp.sendNoctaliaMessage("panel-toggle launcher"))
 hl.bind("SUPER + " .. keys.SEMICOLON, common.dsp.sendNoctaliaMessage("panel-toggle launcher /emo"))
-hl.bind("SUPER + " .. keys.L, common.dsp.sendNoctaliaMessage("session lock"))
 hl.bind("SUPER + ALT + " .. keys.C, common.dsp.sendNoctaliaMessage("panel-toggle session"))
 
 ---------------------------
