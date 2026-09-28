@@ -118,8 +118,6 @@ center = [
     "audio_visualizer",
     "special_workspaces",
     "taskbar",
-    "spacer_1",
-    "active_window",
 ]
 end = [
     "media",
@@ -250,9 +248,6 @@ group_by_workspace = true
 active_opacity = 1.0
 inactive_opacity = 0.55
 hide_empty_workspaces = true
-
-[widget.active_window]
-title_scroll = "on_hover"
 
 # 
 # End widgets
