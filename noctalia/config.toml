@@ -104,7 +104,15 @@ path = "/home/sergey/syncthing-folders/Main/Me/Картиночеки/Fandoms/Ga
 
 
 [bar.default]
-start = ["launcher", "clock", "spacer_1", "group:g1", "group:g2"]
+start = [
+    "launcher",
+    "date",
+    "clock_wd",
+    "time",
+    "spacer_1",
+    "group:g1",
+    "group:g2",
+]
 center = [
     # "workspaces",
     "audio_visualizer",
@@ -135,6 +143,30 @@ scale = 1.00
 thickness = 35
 widget_spacing = 16
 
+[widget.date]
+type = "clock"
+format = "{:%F}"
+capsule = true
+capsule_fill = "on_secondary"
+font_family = "consolas"
+capsule_padding = 10
+
+[widget.clock_wd]
+type = "clock"
+format = "w:{:%V} d:{:%u}"
+capsule = true
+capsule_fill = "on_secondary"
+font_family = "consolas"
+capsule_padding = 10
+
+[widget.time]
+type = "clock"
+format = "{:%T}"
+capsule = true
+capsule_fill = "on_secondary"
+font_family = "consolas"
+capsule_padding = 10
+
 [[bar.default.capsule_group]]
 id = "g1"
 border = ""
@@ -159,9 +191,6 @@ type = "spacer"
 # 
 [widget.launcher]
 color = "secondary"
-
-[widget.clock]
-format = "{:%T %F d:%u w:%V}"
 
 [widget.temp]
 show_value = false
