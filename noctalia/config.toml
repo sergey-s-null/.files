@@ -213,7 +213,7 @@ interactive = true
 [widget.hypr-submap]
 type = "k4n4t4/hypr-submap:hypr-submap"
 hide_when_default = true
-color = "primary"
+color = "error"
 
 # 
 # Center widgets
