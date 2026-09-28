@@ -115,9 +115,9 @@ start = [
 ]
 center = [
     # "workspaces",
-    "audio_visualizer",
     "special_workspaces",
     "taskbar",
+    "audio_visualizer",
 ]
 end = [
     "media",
