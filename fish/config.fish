@@ -17,3 +17,6 @@ function y
 	end
 	command rm -f -- "$tmp"
 end
+
+# opencode
+fish_add_path /home/sergey/.opencode/bin
