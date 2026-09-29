@@ -1,4 +1,6 @@
 function remind
+    # https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+
     # ANSI/Kitty Escape Sequence Reference:
     # \e[ -> Control Sequence Introducer (CSI)
     # \e[0m -> Reset all formatting
