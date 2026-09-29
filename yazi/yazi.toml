@@ -70,6 +70,7 @@ rules = [
 	] },
 	# Text
 	{ mime = "text/*", use = [
+		"open_in_code",
 		"edit",
 		"reveal",
 	] },
