@@ -32,10 +32,13 @@ ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
-no_default_action = [{ run = "true", desc = "---" }]
-edit = [
-	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix", block = true },
+no_default_action = [{ run = "true", desc = "<do nothing>" }]
+open_in_code = [
+	{ run = "code %s", desc = "code %s" },
 ]
+# edit = [
+# 	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", for = "unix", block = true },
+# ]
 play = [
 	{ run = "xdg-open %s1 &", desc = "Play", for = "linux", orphan = true },
 	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
@@ -60,7 +63,8 @@ rules = [
 	# Folder
 	{ mime = "folder/*", use = [
 		"no_default_action",
-		"edit",
+		"open_in_code",
+		# "edit",
 		"open",
 		"reveal",
 	] },
