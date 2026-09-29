@@ -161,3 +161,11 @@ hl.window_rule({
     },
     opaque = true,
 })
+
+hl.window_rule({
+    match = {
+        class = "org.telegram.desktop",
+        title = "Media viewer",
+    },
+    no_anim = true,
+})
