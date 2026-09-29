@@ -40,9 +40,9 @@ play = [
 	{ run = "xdg-open %s1 &", desc = "Play", for = "linux", orphan = true },
 	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
 ]
-open = [{ run = "xdg-open %s1", desc = "Open", for = "linux" }]
+open = [{ run = "xdg-open %s1 &", desc = "Open", for = "linux" }]
 reveal = [
-	{ run = "xdg-open %d1", desc = "Reveal", for = "linux" },
+	{ run = "xdg-open %d1 &", desc = "Reveal", for = "linux" },
 	{ run = "clear; exiftool %s1; echo 'Press enter to exit'; read _", desc = "Show EXIF", for = "unix", block = true },
 ]
 extract = [{ run = "ya pub extract --list %s", desc = "Extract here" }]
