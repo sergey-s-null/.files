@@ -1,5 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask",
+  },
   "provider": {
     "ollama": {
       "npm": "@ai-sdk/openai-compatible",
@@ -20,7 +23,7 @@
         "baseURL": "http://localhost:1234/v1"
       },
       "models": {
-        "google/gemma-4-26b-a4b-qat":{
+        "google/gemma-4-26b-a4b-qat": {
           "name": "google/gemma-4-26b-a4b-qat"
         }
       }
