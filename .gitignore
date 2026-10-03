@@ -2,14 +2,5 @@
 !.gitignore
 !.editorconfig
 
+!/.config
 !.vscode
-
-!/beets
-!/fish
-!/hypr
-!/mpd
-!/mpv
-!/noctalia
-!/opencode
-!/uwsm
-!/yazi
