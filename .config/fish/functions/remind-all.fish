@@ -1,5 +1,5 @@
 function remind-all
     pushd ~/.reminders
-    cat * | glow - -t
+    cat * | glow - -t -l
     popd
 end

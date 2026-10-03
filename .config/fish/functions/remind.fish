@@ -1,5 +1,5 @@
 function remind
     pushd ~/.reminders
-    glow -a
+    glow -a -l
     popd
 end
