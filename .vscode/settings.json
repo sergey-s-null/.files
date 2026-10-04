@@ -79,6 +79,7 @@
         ".vscode-oss": true,
         ".zshrc": true,
         "code": true,
+        "ComfyUI*": true,
         "Desktop": true,
         "Documents": true,
         "Downloads": true,
