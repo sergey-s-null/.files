@@ -1,3 +1,6 @@
+# UI contolled settings:
+# ~/.local/state/noctalia/settings.toml
+
 [accessibility]
 ui_scale = 1.00
 
@@ -94,7 +97,7 @@ builtin_ids = [
     "alacritty",
     "hyprland",
 ]
-community_ids = ["yazi"]
+community_ids = ["opencode", "zellij", "glow", "yazi"]
 
 [wallpaper]
 directory = "~/syncthing-folders/Main/Me/Картиночеки"
