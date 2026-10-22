@@ -2,6 +2,11 @@ directory: ~/syncthing-folders/music
 library: ~/syncthing-folders/music/.meta/library.db
 import:
     move: yes
+    languages: ru en
 paths:
     singleton: Non-Album/$artist/$title
     default: $albumartist/$album%aunique{}/$track $title
+plugins: musicbrainz mbsync
+musicbrainz:
+    host: musicbrainz.org
+    extra_tags: [alias, country, tracks, year]
